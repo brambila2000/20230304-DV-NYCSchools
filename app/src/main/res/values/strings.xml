@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">20230304-DV-NYCSchools</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="school_test_scores">School Test Scores</string>
+    <string name="takers">Takers: --</string>
+    <string name="math_score">Math Score: --</string>
+    <string name="reading_score">Reading Score: --</string>
+    <string name="writing_score">Writing Score: --</string>
+</resources>
