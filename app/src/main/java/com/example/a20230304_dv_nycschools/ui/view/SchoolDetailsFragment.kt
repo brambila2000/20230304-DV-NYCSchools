@@ -17,7 +17,7 @@ class SchoolDetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentSchoolDetailsBinding
     private val nycSchoolsViewModel: NYCSchoolsViewModel by viewModels()
-    private lateinit var schoolScoresList : List<SchoolDataModel>
+    private lateinit var schoolScoresList: List<SchoolDataModel>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,8 +40,8 @@ class SchoolDetailsFragment : Fragment() {
             //Some school names do not match in the two end points given, therefore it wont find the
             //the information, while some will match. This is a just a bare bones app to improve on
             binding.school.text = schoolSelected.toString()
-            for(school in schoolScoresList){
-                if(school.name.contains(schoolSelected.toString(), true)) {
+            for (school in schoolScoresList) {
+                if (school.name.contains(schoolSelected.toString(), true)) {
                     binding.takers.text = "Takers: ${school.takers}"
                     binding.math.text = "Math Score: ${school.math}"
                     binding.reading.text = "Reading Score: ${school.reading}"

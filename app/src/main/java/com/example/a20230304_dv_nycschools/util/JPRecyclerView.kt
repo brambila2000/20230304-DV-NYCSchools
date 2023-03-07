@@ -28,7 +28,7 @@ class JPRecyclerView @JvmOverloads constructor(
     fun bindDataToTable(
         list: List<SchoolModel>,
         destination: Int
-    ){
+    ) {
         val adapter = CustomAdapter(
             list,
             { view: View, text: String -> navigateToDetailsFragment(view, text, destination) }
@@ -41,7 +41,7 @@ class JPRecyclerView @JvmOverloads constructor(
         recyclerView.adapter = adapter
     }
 
-    fun navigateToDetailsFragment(view: View, str: String, destination: Int){
+    fun navigateToDetailsFragment(view: View, str: String, destination: Int) {
         val bundle = Bundle()
         bundle.putString("school", str)
         view.findNavController().navigate(destination, bundle)

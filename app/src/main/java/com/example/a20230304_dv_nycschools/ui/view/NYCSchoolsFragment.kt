@@ -38,7 +38,8 @@ class NYCSchoolsFragment : Fragment() {
         nycSchoolsViewModel.schoolModelList.observe(viewLifecycleOwner, Observer { currentList ->
             val schoolsList = currentList
 
-            binding.jprecyclerview.bindDataToTable(schoolsList,
+            binding.jprecyclerview.bindDataToTable(
+                schoolsList,
                 R.id.action_NYCSchoolsFragment_to_schoolDetailsFragment
             )
         })

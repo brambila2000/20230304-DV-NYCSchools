@@ -10,9 +10,9 @@ import com.example.a20230304_dv_nycschools.data.data.model.SchoolModel
 
 class CustomAdapter(
     private val dataSet: List<SchoolModel>,
-    private val listener: (View, String) -> Unit) :
-    RecyclerView.Adapter<CustomAdapter.ViewHolder>()
-{
+    private val listener: (View, String) -> Unit
+) :
+    RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView

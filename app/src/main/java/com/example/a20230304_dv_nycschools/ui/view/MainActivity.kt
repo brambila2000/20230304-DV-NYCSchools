@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if(!isConnected(this)){
+        if (!isConnected(this)) {
             Toast.makeText(this, "No Network Connection Good Bye!", Toast.LENGTH_LONG).show()
             Thread.sleep(4000)
             finish()

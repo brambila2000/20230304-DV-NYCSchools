@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitHelper {
 
-    fun getRetrofit() : Retrofit{
+    fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://data.cityofnewyork.us/resource/")
             .addConverterFactory(GsonConverterFactory.create())
