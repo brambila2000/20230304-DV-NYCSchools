@@ -30,21 +30,13 @@ class NYCSchoolsViewModel : ViewModel() {
             try {
                 _isLoading.postValue(true)
                 val result = getSchoolsList.getListOfSchools()
-                //val dataResult = getSchoolsDataScores.getSchoolsData()
 
                 if (!result.isNullOrEmpty()) {
-                    result?.let {
+                    result.let {
                         _schoolModelList.postValue(it)
                         _isLoading.postValue(false)
                     }
                 }
-                /*if (!dataResult.isNullOrEmpty()) {
-                    //result?.let{schoolModelList.postValue(it)
-                    dataResult?.let {
-                        schoolDataModel.postValue(it)
-                        println(it.joinToString(" "))
-                    }
-                }*/
             } catch (e: java.lang.Exception) {
                 e.printStackTrace()
                 println("Error Loading")
@@ -59,8 +51,7 @@ class NYCSchoolsViewModel : ViewModel() {
                 val dataResult = getSchoolsDataScores.getSchoolsData()
 
                 if (!dataResult.isNullOrEmpty()) {
-                    //result?.let{schoolModelList.postValue(it)
-                    dataResult?.let {
+                    dataResult.let {
                         _schoolDataModel.postValue(it)
                     }
                 }
@@ -69,10 +60,5 @@ class NYCSchoolsViewModel : ViewModel() {
                 println("Error Loading")
             }
         }
-    }
-
-    fun getSchoolsList() {
-        /*val schoolList : List<SchoolModel> = SchoolProvider.getSchoolsList()
-        schoolModelList.value = schoolList*/
     }
 }
