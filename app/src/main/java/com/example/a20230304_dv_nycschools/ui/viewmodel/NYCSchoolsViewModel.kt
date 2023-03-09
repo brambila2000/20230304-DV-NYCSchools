@@ -1,5 +1,6 @@
 package com.example.a20230304_dv_nycschools.ui.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,10 +12,14 @@ import kotlinx.coroutines.launch
 
 class NYCSchoolsViewModel : ViewModel() {
 
-    val schoolModelList = MutableLiveData<List<SchoolModel>>()
-    val schoolDataModel = MutableLiveData<List<SchoolDataModel>>()
+    private val _schoolModelList = MutableLiveData<List<SchoolModel>>()
+    val schoolModelList : LiveData<List<SchoolModel>> get() = _schoolModelList
 
-    val isLoading = MutableLiveData<Boolean>()
+    private val _schoolDataModel = MutableLiveData<List<SchoolDataModel>>()
+    val schoolDataModel : LiveData<List<SchoolDataModel>> get() = _schoolDataModel
+
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading : LiveData<Boolean> get() = _isLoading
 
     val getSchoolsList = GetSchoolsList()
     val getSchoolsDataScores = GetSchoolsDataScores()
@@ -23,14 +28,14 @@ class NYCSchoolsViewModel : ViewModel() {
 
         viewModelScope.launch {
             try {
-                isLoading.postValue(true)
+                _isLoading.postValue(true)
                 val result = getSchoolsList.getListOfSchools()
                 //val dataResult = getSchoolsDataScores.getSchoolsData()
 
                 if (!result.isNullOrEmpty()) {
                     result?.let {
-                        schoolModelList.postValue(it)
-                        isLoading.postValue(false)
+                        _schoolModelList.postValue(it)
+                        _isLoading.postValue(false)
                     }
                 }
                 /*if (!dataResult.isNullOrEmpty()) {
@@ -56,7 +61,7 @@ class NYCSchoolsViewModel : ViewModel() {
                 if (!dataResult.isNullOrEmpty()) {
                     //result?.let{schoolModelList.postValue(it)
                     dataResult?.let {
-                        schoolDataModel.postValue(it)
+                        _schoolDataModel.postValue(it)
                     }
                 }
             } catch (e: java.lang.Exception) {
