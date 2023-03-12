@@ -1,4 +1,4 @@
-package com.example.a20230304_dv_nycschools.util
+package com.example.a20230304_dv_nycschools.ui.view
 
 import android.content.Context
 import android.os.Bundle
@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.a20230304_dv_nycschools.data.data.model.SchoolModel
 import com.example.a20230304_dv_nycschools.databinding.JprecyclerViewBinding
+import com.example.a20230304_dv_nycschools.ui.view.CustomAdapter
 
 
 //RecyclerView Component

@@ -6,7 +6,7 @@
     android:background="@color/design_default_color_on_primary"
     tools:context=".ui.view.NYCSchoolsFragment">
 
-   <com.example.a20230304_dv_nycschools.util.JPRecyclerView
+   <com.example.a20230304_dv_nycschools.ui.view.JPRecyclerView
        android:id="@+id/jprecyclerview"
        android:layout_width="match_parent"
        android:layout_height="match_parent"/>

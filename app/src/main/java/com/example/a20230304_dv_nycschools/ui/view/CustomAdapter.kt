@@ -1,4 +1,4 @@
-package com.example.a20230304_dv_nycschools.util
+package com.example.a20230304_dv_nycschools.ui.view
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.a20230304_dv_nycschools.R
 import com.example.a20230304_dv_nycschools.data.data.model.SchoolModel
+import com.example.a20230304_dv_nycschools.databinding.ItemBinding
 
 class CustomAdapter(
     private val dataSet: List<SchoolModel>,
@@ -14,11 +15,14 @@ class CustomAdapter(
 ) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
+
+
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val binding = ItemBinding.bind(view)
         val textView: TextView
 
         init {
-            textView = view.findViewById(R.id.view)
+            textView = binding.view
         }
     }
 
